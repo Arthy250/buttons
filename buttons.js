@@ -8,3 +8,18 @@ mybutton = document.getElementById("backToTop");
   function bottomFunction() {
     window.scrollTo(0,document.body.scrollHeight);
   }
+
+/* Jquery arreglo de botones*/
+if(buttonDemos.length > 0){
+    buttonDemos.each(function( index, buttonDemo ) {
+      var linkbuttonDemos = $(this).attr('href');
+      if(linkbuttonDemos == '#demos'){
+        console.log(linkbuttonDemos);
+        $( this ).on( "click", function() {
+          $('html, body').animate({
+            scrollTop: $("#demos").offset().top
+          }, 750);
+        } );
+      }
+    });
+  }
